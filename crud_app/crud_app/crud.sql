@@ -1,35 +1,23 @@
-
---
--- Database: `crud`
---
-
--- --------------------------------------------------------
-
-CREATE TABLE `students` (
+# yum -y install @mysql
+# systemctl start mysqld
+# systemctl enable --now mysqld
+# systemctl status mysqld
+# mysql_secure_installation
+ sudo grep 'temporary password' /var/log/mysqld.log
+# mysql -u root -p
+CREATE TABLE `filedata` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `filename` varchar(255) NOT NULL,
+  `timestamp` varchar(255) NOT NULL,
+  `size` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL
+);
 
---
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `students`
---
-ALTER TABLE `students`
+ALTER TABLE `filedata`
   ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
+ALTER TABLE `filedata`   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
---
--- AUTO_INCREMENT for table `students`
---
-ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+
+
